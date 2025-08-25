@@ -8,7 +8,7 @@ export const SYMBOLS = '!@#$%^&*()-_=+[]{},.<>/?';
 export interface CharsetOptions {
   lowercase: boolean;
   uppercase: boolean;
-  digits: boolean;
+  numbers: boolean;
   symbols: boolean;
 }
 
@@ -22,7 +22,7 @@ export function buildCharacterPool(options: CharsetOptions): string {
   
   if (options.lowercase) pool += LOWERCASE;
   if (options.uppercase) pool += UPPERCASE;
-  if (options.digits) pool += DIGITS;
+  if (options.numbers) pool += DIGITS;
   if (options.symbols) pool += SYMBOLS;
   
   return pool;
@@ -38,7 +38,7 @@ export function getSelectedCharsets(options: CharsetOptions): string[] {
   
   if (options.lowercase) charsets.push(LOWERCASE);
   if (options.uppercase) charsets.push(UPPERCASE);
-  if (options.digits) charsets.push(DIGITS);
+  if (options.numbers) charsets.push(DIGITS);
   if (options.symbols) charsets.push(SYMBOLS);
   
   return charsets;
@@ -50,5 +50,5 @@ export function getSelectedCharsets(options: CharsetOptions): string[] {
  * @returns true se pelo menos uma opção está ativa
  */
 export function hasSelectedOptions(options: CharsetOptions): boolean {
-  return options.lowercase || options.uppercase || options.digits || options.symbols;
+  return options.lowercase || options.uppercase || options.numbers || options.symbols;
 }

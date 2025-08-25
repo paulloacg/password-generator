@@ -23,7 +23,7 @@ export default function OptionsForm({
     setLocalOptions(options);
   }, [options]);
 
-  const handleOptionChange = (key: keyof GeneratorOptions, value: any) => {
+  const handleOptionChange = (key: keyof GeneratorOptions, value: boolean | number) => {
     const newOptions = { ...localOptions, [key]: value };
     setLocalOptions(newOptions);
     onChange(newOptions);
@@ -220,7 +220,7 @@ export default function OptionsForm({
                 Excluir caracteres ambíguos
               </span>
               <p id="exclude-ambiguous-description" className="text-xs text-gray-500 dark:text-gray-400">
-                Remove: {}, [], (), /, \, ', ", `, ~, ,, ;, ., &lt;, &gt;
+                Remove: {}, [], (), /, \, &apos;, &quot;, `, ~, ,, ;, ., &lt;, &gt;
               </p>
             </div>
           </label>
