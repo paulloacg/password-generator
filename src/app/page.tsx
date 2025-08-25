@@ -199,7 +199,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              © 2024 Gerador de Senhas Seguras. Desenvolvido com Next.js e TypeScript.
+              © 2024 Gerador de Senhas Seguras. Desenvolvido por{' '}
+              <a 
+                href="https://instagram.com/paulloacg" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-200 font-medium"
+                aria-label="Instagram do Paulo Gomes"
+              >
+                Paulo Gomes
+              </a>
+              {' '}com Next.js e TypeScript.
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
               Todas as senhas são geradas localmente no seu navegador. Nenhuma informação é enviada para servidores externos.
