@@ -1,5 +1,145 @@
 @import "tailwindcss";
 
+/* Animação personalizada para a barra de progresso do toast */
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Estilos para foco melhorado */
+.focus-visible:focus {
+  outline: 2px solid theme('colors.blue.500');
+  outline-offset: 2px;
+}
+
+/* Estilos para o slider customizado */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: theme('colors.gray.200');
+  height: 6px;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: theme('colors.blue.500');
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: theme('colors.blue.600');
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-track {
+  background: theme('colors.gray.200');
+  height: 6px;
+  border-radius: 3px;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: theme('colors.blue.500');
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: theme('colors.blue.600');
+  transform: scale(1.1);
+}
+
+/* Dark mode para o slider */
+@media (prefers-color-scheme: dark) {
+  input[type="range"]::-webkit-slider-track {
+    background: theme('colors.gray.700');
+  }
+  
+  input[type="range"]::-moz-range-track {
+    background: theme('colors.gray.700');
+  }
+}
+
+/* Estilos para scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.gray.100');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.gray.400');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.gray.500');
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: theme('colors.gray.800');
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.gray.600');
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.gray.500');
+  }
+}
+
+/* Estilos para seleção de texto */
+::selection {
+  background-color: theme('colors.blue.200');
+  color: theme('colors.blue.900');
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background-color: theme('colors.blue.800');
+    color: theme('colors.blue.100');
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
